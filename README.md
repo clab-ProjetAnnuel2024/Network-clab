@@ -10,7 +10,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 - [Docker](https://www.docker.com/get-started)
 - [ContainerLab](https://containerlab.dev/)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- (Optionnel) [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (Optionnel) 
 
 ## Installation
 
