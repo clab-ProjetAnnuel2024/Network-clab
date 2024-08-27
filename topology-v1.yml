@@ -1,0 +1,123 @@
+name: LAB_Topology
+
+# Ce fichier definit une topologie de reseau de laboratoire avec divers equipements.
+# La topologie comprend plusieurs equipements utilisant des systemes d'exploitation Alpine Linux et SR Linux (srlinux).
+# Les adresses IP de gestion sont configurees dans le sous-reseau 100.64.0.0/24.
+
+mgmt:
+  network: mgmt_lab
+  ipv4-subnet: 100.64.0.0/24
+  # Sous-reseau IPv4 pour la gestion des noeuds du laboratoire. Ce sous-reseau est utilise pour l'administration des equipements.
+
+topology:
+  nodes:
+    PE1:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.11
+      # Equipement PE1 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.11.
+
+    P1:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.13
+      # Equipement P1 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.13.
+
+    P2:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.2
+      # Equipement P2 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.2.
+
+    P3:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.32
+      # Equipement P3 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.32.
+
+    PE2:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.22
+      # Equipement PE2 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.22.
+
+    P4:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.4
+      # Equipement P4 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.4.
+
+    P5:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.5
+      # Equipement P5 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.5.
+
+    P6:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 100.64.0.6
+      # Equipement P6 utilisant Alpine Linux avec une adresse IP de gestion 100.64.0.6.
+
+    PE3:
+      kind: srl
+      image: ghcr.io/nokia/srlinux:latest
+      mgmt-ipv4: 100.64.0.33
+      # Equipement PE3 utilisant SR Linux avec une adresse IP de gestion 100.64.0.33.
+
+  links:
+    # Definition des connexions physiques ou logiques entre les equipements du reseau.
+    # Les adresses IP associees aux liens sont commentees pour reference future.
+
+    - endpoints: ["PE1:eth1", "P1:eth1"]
+      # Connexion entre PE1 et P1 via eth1 sur chaque equipement.
+      # iperf3 pourrait etre utilise pour tester cette connexion.
+      # ipv4: ["100.100.1.0/31", "100.100.1.1/31"]
+
+    - endpoints: ["PE1:eth2", "P5:eth2"]
+      # Connexion entre PE1 et P5 via eth2 sur chaque equipement.
+      # ipv4: ["100.100.2.0/31", "100.100.2.1/31"]
+
+    - endpoints: ["P1:eth5", "PE3:e1-5"]
+      # Connexion entre P1 et PE3 via eth5 sur P1 et e1-5 sur PE3.
+      # ipv4: ["100.100.12.1/31", "100.100.12.0/31"]
+
+    - endpoints: ["P1:eth4", "P3:eth4"]
+      # Connexion entre P1 et P3 via eth4 sur chaque equipement.
+      # ipv4: ["100.100.4.0/31", "100.100.4.1/31"]
+
+    - endpoints: ["P1:eth3", "P2:eth3"]
+      # Connexion entre P1 et P2 via eth3 sur chaque equipement.
+      # ipv4: ["100.100.3.0/31", "100.100.3.1/31"]
+
+    - endpoints: ["P3:eth3", "P5:eth3"]
+      # Connexion entre P3 et P5 via eth3 sur chaque equipement.
+      # ipv4: ["100.100.6.0/31", "100.100.6.1/31"]
+
+    - endpoints: ["P5:eth1", "P6:eth1"]
+      # Connexion entre P5 et P6 via eth1 sur chaque equipement.
+      # ipv4: ["100.100.7.0/31", "100.100.7.1/31"]
+
+    - endpoints: ["P2:eth6", "PE3:e1-6"]
+      # Connexion entre P2 et PE3 via eth6 sur P2 et e1-6 sur PE3.
+      # ipv4: ["100.100.13.0/31", "100.100.13.1/31"]
+
+    - endpoints: ["P2:eth5", "P4:eth5"]
+      # Connexion entre P2 et P4 via eth5 sur chaque equipement.
+      # ipv4: ["100.100.8.0/31", "100.100.8.1/31"]
+
+    - endpoints: ["P2:eth4", "PE2:eth4"]
+      # Connexion entre P2 et PE2 via eth4 sur chaque equipement.
+      # ipv4: ["100.100.10.0/31", "100.100.10.1/31"]
+
+    - endpoints: ["PE2:eth3", "P6:eth3"]
+      # Connexion entre PE2 et P6 via eth3 sur chaque equipement.
+      # ipv4: ["100.100.11.0/31", "100.100.11.1/31"]
+
+    - endpoints: ["P3:eth1", "P4:eth1"]
+      # Connexion entre P3 et P4 via eth1 sur chaque equipement.
+      # ipv4: ["100.100.5.0/31", "100.100.5.1/31"]
+
+    - endpoints: ["P4:eth2", "P6:eth2"]
+      # Connexion entre P4 et P6 via eth2 sur chaque equipement.
+      # ipv4: ["100.100.9.0/31", "100.100.9.1/31"]
