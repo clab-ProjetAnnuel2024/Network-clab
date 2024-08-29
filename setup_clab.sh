@@ -29,7 +29,7 @@ version_codename=$(echo $(. /etc/os-release && echo "$VERSION_CODENAME"))
 # Ajouter le dépôt Docker à la liste des sources d'Apt
 echo "Ajout du dépôt Docker à la liste des sources d'Apt..."
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/${os_id} \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/${os_id} \
   ${version_codename} stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
