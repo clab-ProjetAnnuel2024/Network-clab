@@ -69,10 +69,6 @@ curl -sL https://get.containerlab.dev | bash
 echo "Vérification de l'installation de ContainerLab..."
 command -v containerlab || { echo "Erreur : ContainerLab n'a pas été installé correctement."; exit 1; }
 
-# Déploiement de la topologie
-echo "Déploiement de la topologie..."
-containerlab deploy -t topology-vf.yml
-
 # Installation de tcpdump
 echo "Installation de tcpdump..."
 apt-get install -y tcpdump
