@@ -84,9 +84,7 @@ dpkg -l | grep -q tcpdump || { echo "Erreur : tcpdump n'a pas été installé co
 
 # Exécution de Docker Compose avec une configuration
 echo "Déploiement avec Docker Compose..."
-curl -sL \
-| https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \ 
-| docker compose -f - up -d
+curl -sL https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml | docker compose -f - up -d
 
 # Installation de wireshark
 echo "Installation de wireshark..."
