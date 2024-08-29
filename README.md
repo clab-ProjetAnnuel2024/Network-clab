@@ -21,5 +21,4 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
    chmod +x setup_clab.sh
    bash ./setup_clab.sh
 ## Au redémmarage après le script
-   cd Network-clab
-   containerlab deploy -t topology-vf.yml (--reconfigure)
+   cd Network-clab && containerlab deploy -t topology-vf.yml (--reconfigure)
