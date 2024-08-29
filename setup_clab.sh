@@ -18,9 +18,14 @@ dpkg -l | grep -E 'ca-certificates|curl|gnupg|wget' || { echo "Erreur : Un ou pl
 echo "Création du répertoire pour les clés..."
 install -m 0755 -d /etc/apt/keyrings
 
-# Télécharge et ajoute la clé GPG pour Docker
-echo "Téléchargement et ajout de la clé GPG pour Docker..."
-curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+# Vérifie si la clé GPG existe déjà
+if [ -f /etc/apt/keyrings/docker.gpg ]; then
+    echo "La clé GPG pour Docker existe déjà. Pas besoin de la télécharger à nouveau."
+else
+    # Télécharge et ajoute la clé GPG pour Docker
+    echo "Téléchargement et ajout de la clé GPG pour Docker..."
+    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+fi
 
 # Récupère l'ID de l'OS et le codename de version
 os_id=$(echo $(. /etc/os-release && echo "$ID"))
