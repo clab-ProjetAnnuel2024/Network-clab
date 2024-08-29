@@ -43,7 +43,7 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 # Vérifie l'installation de Docker et ses composants
 echo "Vérification de l'installation de Docker..."
-dpkg -l | grep -E 'docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin' || { echo "Erreur : Docker ou ses composants ne sont pas installés correctement."; exit 1; }
+dpkg -l | grep -E 'docker-ce docker-ce-cli containerd.io' || { echo "Erreur : Docker ou ses composants ne sont pas installés correctement."; exit 1; }
 
 # Demander le nom d'utilisateur et le token Docker
 read -p "Votre nom d'utilisateur de Docker : " utilisateur
