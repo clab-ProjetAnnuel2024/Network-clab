@@ -65,6 +65,10 @@ export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 echo "Installation de ContainerLab..."
 curl -sL https://get.containerlab.dev | bash
 
+# Installation de CNI plugins
+echo "Installation de CNI plugins..."
+apt-get install -y containernetworking-plugins
+
 # Vérifie l'installation de ContainerLab
 echo "Vérification de l'installation de ContainerLab..."
 command -v containerlab || { echo "Erreur : ContainerLab n'a pas été installé correctement."; exit 1; }
