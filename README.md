@@ -16,7 +16,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
    ```bash
    su root
-   apt-get install -y git
+   apg-get update && apt-get install -y git
    git clone https://github.com/clab-ProjetAnnuel2024/Network-clab.git && cd Network-clab
    chmod +x setup_clab.sh
    ./setup_clab.sh
