@@ -15,10 +15,10 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 ## Installation
 
    ```bash
-   sudo apt-get update
-   sudo apt-get install -y git
+   su root
+   apt-get install -y git
    git clone https://github.com/clab-ProjetAnnuel2024/Network-clab.git && cd Network-clab
    chmod +x setup.sh
-   sudo ./setup.sh
+   ./setup.sh
 ## Utilisation
    containerlab deploy -t <fichier.yml> (--reconfigure)
