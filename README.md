@@ -7,10 +7,12 @@ Ce projet se concentre sur l'évaluation et la construction d'une topologie rés
 
 Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-- [Docker](https://www.docker.com/get-started)
-- [ContainerLab](https://containerlab.dev/)
+- Un hyperviseur (VmWare de préférence)
+- Une image ISO de l’architecture Linux
+- VM avec au minimum 8 Go de Ram, 2 CPU Quad-Core et 60 Go pour le stockage
+- [Token Github](https://github.com/settings/tokens)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (Optionnel) 
+
 
 ## Installation
 
