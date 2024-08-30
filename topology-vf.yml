@@ -30,8 +30,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/PE1interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/PE1routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     P1:
       kind: linux
@@ -48,8 +48,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P1interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P1routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     P2:
       kind: linux
@@ -67,8 +67,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P2interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P2routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     P3:
       kind: linux
@@ -86,9 +86,9 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P3interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P3routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
-
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
+        
     PE2:
       kind: linux
       image: alpine:latest
@@ -105,8 +105,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/PE2interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/PE2routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     P4:
       kind: linux
@@ -124,8 +124,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P4interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P4routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     P5:
       kind: linux
@@ -143,8 +143,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P5interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P5routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     P6:
       kind: linux
@@ -161,8 +161,8 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P6interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P6routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
-        - apk update && apk add iperf3
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
+        - apk update && apk add iperf3 iproute2 iptables
 
     PE3:
       kind: srl
