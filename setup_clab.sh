@@ -115,10 +115,6 @@ apt-get install -y nmap
 echo "Vérification de l'installation de nmap..."
 dpkg -l | grep -q nmap || { echo "Erreur : nmap n'a pas été installé correctement."; exit 1; }
 
-# Déploiement de la topologie
-echo "Déploiement de la topologie réseau ..."
-containerlab deploy -t topology-vf.yml
-
 # Reboot de la machine
 echo "Redémarrage de la machine dans quelques secondes ..."
 sleep 10
