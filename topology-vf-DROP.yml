@@ -30,7 +30,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/PE1interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/PE1routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -51,7 +51,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P1interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P1routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -72,7 +72,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P2interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P2routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -93,7 +93,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P3interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P3routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -114,7 +114,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/PE2interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/PE2routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -135,7 +135,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P4interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P4routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -156,7 +156,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P5interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P5routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
@@ -176,7 +176,7 @@ topology:
         # Sauvegarde de la configuration IP
         - /bin/sh -c "sleep 1; ip addr show > /home/P6interfaces.txt"
         - /bin/sh -c "sleep 1; ip route show > /home/P6routes.txt"
-        # Installation de iperf3 pour les tests de performance reseau
+        # Installation de iperf3, iproute et iptables pour les tests de performance reseau et le pare-feu
         - apk update && apk add iperf3 iproute2 iptables
         - iptables -P INPUT DROP  # Bloquer le trafic entrant
         - iptables-save
