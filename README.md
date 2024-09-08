@@ -22,4 +22,5 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
    git clone https://github.com/clab-ProjetAnnuel2024/Network-clab.git && cd Network-clab
    chmod +x setup_clab.sh && bash ./setup_clab.sh
 ## Après le redémmarage à la fin du script setup_clab.sh
+   su root
    cd Network-clab && containerlab deploy -t topology-vf.yml
