@@ -51,8 +51,8 @@ echo "Vérification de l'installation de Docker..."
 dpkg -l | grep -E 'docker-ce|docker-ce-cli|containerd.io|docker-buildx-plugin|docker-compose-plugin' || { echo "Erreur : Docker ou ses composants ne sont pas installés correctement."; exit 1; }
 
 # Demander le nom d'utilisateur et le token Docker
-read -p "Votre nom d'utilisateur de Docker : " utilisateur
-read -s -p "Entrez votre token Docker ici : " token
+read -p "Votre nom d'utilisateur de GitHub : " utilisateur
+read -s -p "Entrez votre token GitHub ici : " token
 echo  # Pour ajouter une nouvelle ligne après l'entrée du token
 
 # Utiliser le token pour se connecter à GitHub Container Registry
