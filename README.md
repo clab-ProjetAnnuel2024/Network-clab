@@ -24,3 +24,6 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 ## Après le redémmarage à la fin du script setup_clab.sh
    su root
    cd Network-clab && containerlab deploy -t topology-vf.yml
+## Voir sur Edgeshark - A faire depuis le navigateur de la machine hôte
+   http://127.0.0.1:5001/w
+
